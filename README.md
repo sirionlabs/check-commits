@@ -45,5 +45,6 @@ jobs:
           days-since: '2'
 
   nightly-build:
+    needs: check-commits
     if: needs.check-commits.outputs.result == '1'
 ```
