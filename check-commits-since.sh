@@ -8,7 +8,10 @@ REPO_URL=https://api.github.com/repos/$INPUT_REPO
 # if there is a specific path in input, check for that path
 PATH_QUERY=""
 if [ ! -z "$INPUT_PATH" ]; then
-  PATH_QUERY="&path=$INPUT_PATH"
+  for p in $INPUT_PATH; do
+    PATH_QUERY="$PATH_QUERY&path=$p"
+    echo "adding path $p"
+  done
   echo "checking commits on $INPUT_REPO since $SINCE_DATE at path $INPUT_PATH"
 else
   echo "checking commits on $INPUT_REPO since $SINCE_DATE"
