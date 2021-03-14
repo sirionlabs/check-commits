@@ -18,7 +18,7 @@ This action checks a repo for recent commits.
 
 ### `path`
 
-**Optional** . Check for commits under this path instead of repo root. Defaults to repo root.
+**Optional** . Check for commits under this path(s) instead of repo root. Defaults to repo root. Multiple paths should be separated by space. When multiple paths are specified, changes in any of the paths specified will trigger output.
 
 ## Outputs
 
