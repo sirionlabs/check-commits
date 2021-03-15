@@ -8,6 +8,10 @@ This action checks a repo for recent commits.
 
 **Required** The name of the repo. Defaults to `${{ github.repository }}` which evaluates to the repo from which this action is used.
 
+### `ref`
+
+**Required** SHA or branch to start listing commits from. Defaults to `${{ github.ref }}` which evaluates to the branch from which this action is used.
+
 ### `token`
 
 **Required** The github api token used to access the repo. Defaults to `${{ github.token }}` which evaluates to the token used by the current action. If this action is run against another private repo, use an appropriate token for access.
