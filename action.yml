@@ -5,6 +5,10 @@ inputs:
     description: 'repo'
     required: true
     default: ${{ github.repository }}
+  ref:
+    description: 'branch or commit sha. defaults to current branch'
+    required: true
+    default: ${{ github.ref }}
   token:
     description: 'access token'
     required: true
@@ -27,6 +31,7 @@ runs:
     - id: check-commits
       env:
         INPUT_REPO: ${{ inputs.repo }}
+        INPUT_REF: ${{ inputs.ref }}
         INPUT_DAYS: ${{ inputs.days-since }}
         INPUT_TOKEN: ${{ inputs.token }}
         INPUT_PATH: ${{ inputs.path }}

@@ -20,7 +20,7 @@ fi
 STATUS=$(curl -sLo "$OUTFILE" \
  --write-out "%{http_code}" \
  -H"Authorization: token $INPUT_TOKEN" \
- "$REPO_URL/commits?since=$SINCE_DATE&per_page=1$PATH_QUERY")
+ "$REPO_URL/commits?sha=$INPUT_REF&since=$SINCE_DATE&per_page=1$PATH_QUERY")
 
 if [ "$STATUS" -ne "$HTTP_OK" ]; then
   echo "checking commits for $INPUT_REPO. Expected $HTTP_OK. Got $STATUS"
